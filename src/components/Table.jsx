@@ -19,7 +19,7 @@ const Table = () => {
         const getData = async () => {
             setLoading(true)
             try {
-                const response = await axios.get('http://localhost:7000/api/v1/entries/')
+                const response = await axios.get('https://assignmet1-txkt.onrender.com/api/v1/entries/')
                 console.log(response.data)
                 setAllEntries(response.data)
                 setLoading(false)
@@ -41,7 +41,7 @@ const Table = () => {
         }
         try{
             setSendLoading(true)
-            const response = await axios.post('http://localhost:7000/sendmail',selectedItems)
+            const response = await axios.post('https://assignmet1-txkt.onrender.com/sendmail',selectedItems)
             setSendLoading(false)
             window.location.reload();
         }catch(err){

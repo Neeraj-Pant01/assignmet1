@@ -6,7 +6,7 @@ const TableRow = ({seteditform, e, i, setEntry,setSelecTedItem, selectedItems}) 
   const [err, setErr] = useState(false)
   const handleEdit = async () =>{
     try{
-      const response = await axios.get(`http://localhost:7000/api/v1/entries/${e._id}`)
+      const response = await axios.get(`https://assignmet1-txkt.onrender.com/api/v1/entries/${e._id}`)
       console.log(response.data)
       setEntry(response.data)
       seteditform(true)
@@ -18,7 +18,7 @@ const TableRow = ({seteditform, e, i, setEntry,setSelecTedItem, selectedItems}) 
 
   const handleDelete = async () =>{
     try{
-      const response = await axios.delete(`http://localhost:7000/api/v1/entries/remove/${e._id}`)
+      const response = await axios.delete(`https://assignmet1-txkt.onrender.com/api/v1/entries/remove/${e._id}`)
       console.log(response)
       window.location.reload()
     }catch(err){

@@ -27,7 +27,7 @@ const Editform = ({ seteditform, setEntry, entry }) => {
         e.preventDefault()
         setLoading(true)
         try {
-            const response = await axios.put(`http://localhost:7000/api/v1/entries/update/${entry?._id}`,updatedInfo);
+            const response = await axios.put(`https://assignmet1-txkt.onrender.com/api/v1/entries/update/${entry?._id}`,updatedInfo);
             console.log("after editing", response.data)
             setLoading(false)
             seteditform(false)

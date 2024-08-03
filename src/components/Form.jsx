@@ -28,7 +28,7 @@ const Form = ({ setShowForm }) => {
     }
     try {
       setLoading(true)
-      const response = await axios.post(`http://localhost:7000/api/v1/entries/add`, newEntry)
+      const response = await axios.post(`https://assignmet1-txkt.onrender.com/api/v1/entries/add`, newEntry)
       formRef.current.reset();
       setErrors({})
       setLoading(false)
