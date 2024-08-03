@@ -14,6 +14,7 @@ const Table = () => {
     const [selectedItems, setSelecTedItem] = useState([])
     const [err, setErr] = useState(false)
     const [sendLoading, setSendLoading] = useState(false)
+    const [mailErr, setMailErr] = useState(false)
 
     useEffect(() => {
         const getData = async () => {
@@ -44,6 +45,13 @@ const Table = () => {
             const response = await axios.post('https://assignmet1-txkt.onrender.com/sendmail',selectedItems)
             setSendLoading(false)
             window.location.reload();
+            setTimeout(() => {
+                setMailErr(true)
+                setSendLoading(false)
+            }, 20000);
+            setTimeout(()=>{
+                setMailErr(false)
+            }, 4000)
         }catch(err){
             console.log(err)
             setSendLoading(false)
@@ -107,6 +115,10 @@ const Table = () => {
                 {
                     sendLoading && 
                     <div className='text-center text-[red]'>Sending Details...</div>
+                }
+                {
+                    mailErr && 
+                    <div className='text-center text-[red]'> not a valid email address check <span className='underline'>info@redpositive.in</span></div>
                 }
             </div>
         </div>
