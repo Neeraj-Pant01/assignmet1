@@ -79,8 +79,8 @@ const Table = () => {
                             <th className='border md:px-4 md:py-3'></th>
                             <th className='border md:px-4 md:py-3'>ID</th>
                             <th className='border md:px-4 md:py-3'>Name</th>
-                            <th className='border md:px-4 md:py-3'>Phone</th>
                             <th className='border md:px-4 md:py-3'>Email</th>
+                            <th className='border md:px-4 md:py-3'>Phone</th>
                             <th className='border md:px-4 md:py-3'>Hobbies</th>
                             <th className='border md:px-4 md:py-3'></th>
                         </tr>
